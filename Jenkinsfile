@@ -11,14 +11,12 @@ pipeline {
         }
         stage('Upload War To Nexus'){
             steps{ 
-                script{
-                    def mavenPom = readMavenPom file: 'pom.xml'
                 nexusArtifactUploader artifacts:[
                     [
                       artifactId: 'SpringBootRest-3', 
                       classifier: '',
-                        file: "target/SpringBootRest-3-${mavenPom.version}.war", 
-                      type: 'war'
+                        file: "target/SpringBootRest-3-0.0.1-SNAPSHOT.jar", 
+                      type: 'jar'
                     ]
                   ],
                   credentialsId: '623a7bba-d3ad-4186-9ff7-62c633b5722c', 
@@ -27,8 +25,7 @@ pipeline {
                   nexusVersion: 'nexus3',
                   protocol: 'http',
                   repository: 'maven-snapshots',
-                  version: '${mavenPom.version}'
-                }
+                  version: '0.0.1-SNAPSHOT'
             }
         }
     }
