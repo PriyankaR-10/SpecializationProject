@@ -28,6 +28,7 @@ pipeline {
                   protocol: 'http',
                   repository: 'maven-snapshots',
                   version: '${mavenPom.version}'
+                }
             }
         }
     }
