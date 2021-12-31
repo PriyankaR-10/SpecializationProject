@@ -21,7 +21,7 @@ pipeline {
                   ],
                   credentialsId: '623a7bba-d3ad-4186-9ff7-62c633b5722c', 
                   groupId: 'com.th',
-                  nexusUrl: '3.139.100.136:8081',
+                  nexusUrl: '18.191.187.43:8081',
                   nexusVersion: 'nexus3',
                   protocol: 'http',
                   repository: 'Main',
