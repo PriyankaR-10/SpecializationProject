@@ -11,21 +11,21 @@ pipeline {
         }
         stage('Upload War To Nexus'){
             steps{ 
-                nexusArtifactUploader artifacts:[
+                nexusArtifactUploader artifacts: [
                     [
-                      artifactId: 'SpringBootRest-3', 
-                      classifier: '',
-                        file: "target/SpringBootRest-3-0.0.1-SNAPSHOT.jar", 
-                      type: 'jar'
+                        artifactId: 'SpringBootRest-3', 
+                        classifier: '', 
+                        file: 'target/SpringBootRest-3-0.0.1-SNAPSHOT.jar', 
+                        type: 'jar'
                     ]
-                  ],
-                  credentialsId: '623a7bba-d3ad-4186-9ff7-62c633b5722c', 
-                  groupId: 'com.th',
-                  nexusUrl: '18.191.187.43:8081',
-                  nexusVersion: 'nexus3',
-                  protocol: 'http',
-                  repository: 'Main',
-                  version: '0.0.1-SNAPSHOT'
+                ], 
+                    credentialsId: '59b4ac10-1df6-4993-81d3-c4e96b7bddf2', 
+                    groupId: 'com.th', 
+                    nexusUrl: '18.219.225.49:8081', 
+                    nexusVersion: 'nexus3', 
+                    protocol: 'http', 
+                    repository: 'maven-snapshots', 
+                    version: '0.0.1-SNAPSHOT'
             }
         }
     }
